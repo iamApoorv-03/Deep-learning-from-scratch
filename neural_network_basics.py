@@ -50,12 +50,12 @@ for epoch in range (1000):          # for neural network no of epochs are genera
 
 #PLOTTING OF RESULTS
 with torch.no_grad():
-  y_pred =model(X_norm)
+  predictions =model(X_norm)
   # normalisizing true_y before plotting
   true_y_norm = (true_y - y.mean()) / y.std()
 
   plt.scatter(X_norm.numpy(),y_norm.numpy(),label = "noise data", alpha = 0.5)
-  plt.plot(X_norm.numpy(),y_norm.numpy(), label ="true curve", linewidth=3)
-  plt.plot(X_norm.numpy(),y_pred.numpy(), label ="neural network curve", linewidth = 3)
+  plt.plot(X_norm.numpy(),true_y_norm.numpy(), label ="true curve", linewidth=3)
+  plt.plot(X_norm.numpy(),predictions.numpy(), label ="neural network curve", linewidth = 3)
   plt.legend()
   plt.show()

@@ -1,10 +1,10 @@
-# 🧠 Deep Learning Foundations: From Scratch to Mini-Batch
+#  Deep Learning Foundations: From Scratch to Mini-Batch
 
 ![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![Status](https://img.shields.io/badge/Status-Active_Development-green?style=for-the-badge)
 
-## 📌 Overview
+##  Overview
 This repository documents a structured journey of building **Deep Learning foundations from scratch** using PyTorch. Instead of treating models as black boxes, the goal is to:
 
 * **Understand Optimization:** Deconstruct the mathematics of gradients.
@@ -14,7 +14,7 @@ This repository documents a structured journey of building **Deep Learning found
 
 ---
 
-## 🚀 Evolution Phases
+##  Evolution Phases
 
 <details open>
 <summary><b>Phase 1 — Linear Regression From Scratch</b></summary>
@@ -76,7 +76,7 @@ This repository documents a structured journey of building **Deep Learning found
 
 ---
 
-## 📂 Repository Structure
+##  Repository Structure
 ```text
 .
 ├── linear_regression_scratch.py  # Manual GD & Autograd

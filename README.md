@@ -50,28 +50,43 @@ This repository documents a structured journey of building **Deep Learning found
 <summary><b>Phase 5 — Mini-Batch Training (DataLoader)</b></summary>
 
 * **Implementation:** `TensorDataset` and `DataLoader`.
-* **Key Insight:** Batch training introduces "gradient noise" which can actually help in escaping local minima. Average loss per epoch is a more stable metric than total loss.
+* **Key Insight:** Batch training introduces stochasticity into gradient updates ("gradient noise"), which can help optimization escape poor local minima. Tracking **average loss per epoch** provides more stable monitoring than raw batch losses.
 </details>
 
 <details>
 <summary><b>Phase 6 — Regularization (L2 & Dropout)</b></summary>
 
-* **Techniques:** Weight Decay (L2) and Dropout layers.
-* **Key Insight:** Regularization is a tool to trade bias for variance. It is only useful when model capacity significantly exceeds data complexity.
+* **Techniques:** Weight Decay (L2 Regularization) and Dropout layers.
+* **Key Insight:** Regularization reduces variance but increases bias. It is beneficial when **model capacity is larger than dataset complexity**, helping prevent memorization of noise.
 </details>
 
 <details>
 <summary><b>Phase 7 — Overfitting Diagnosis</b></summary>
 
-* **Experiments:** Small data samples vs. high-capacity (512-512) architectures.
-* **Observation:** Evaluation loss divergence is the primary indicator of generalization failure.
+* **Experiments:** Reduced dataset size and increased network capacity (e.g., 512-512 hidden layers).
+* **Observation:** Training loss continues decreasing while evaluation loss increases — a classic sign of **overfitting**.
+* **Insight:** Model capacity must be balanced with data complexity to ensure good generalization.
+</details>
+
+<details>
+<summary><b>Phase 8 — Early Stopping (Training Control)</b></summary>
+
+* **Implementation:** Monitoring validation loss during training and stopping when improvement stagnates.
+* **Mechanism:**  
+  - Track the **best validation loss** observed so far.  
+  - If validation loss does not improve for a defined number of epochs (`patience`), training stops early.
+* **Checkpointing:** The model parameters corresponding to the **best validation performance** are stored using `state_dict()` and restored after stopping.
+* **Key Insight:** Early stopping acts as an **implicit regularizer**, preventing unnecessary training once generalization stops improving.
 </details>
 
 <details open>
-<summary><b>Phase 8 — Professional Enhancements (Current)</b></summary>
+<summary><b>Phase 9 — Training Diagnostics & Learning Curves (Current)</b></summary>
 
-* **Features:** Early stopping logic, learning curve plotting, and modular train/eval separation.
-* **Goal:** Transforming toy scripts into production-style pipelines.
+* **Features Implemented:**
+  - Training vs validation loss tracking
+  - Learning curve visualization
+  - Structured training/evaluation loops
+* **Goal:** Develop the ability to **diagnose training dynamics** such as convergence behavior, underfitting, and overfitting using visual analysis.
 </details>
 
 ---
@@ -79,10 +94,12 @@ This repository documents a structured journey of building **Deep Learning found
 ##  Repository Structure
 ```text
 .
-├── linear_regression_scratch.py  # Manual GD & Autograd
-├── polynomial_regression.py      # Feature engineering & scaling
-├── neural_network_basic.py       # Non-linear activations
-├── nn_train_test_split.py        # Validation strategies
-├── nn_l2_dropout.py              # Regularization experiments
-├── nn_minibatch_dataloader.py    # Efficient data pipelines
-└── README.md
+├── linear_regression_scratch.py   # Manual GD & Autograd
+├── polynomial_regression.py       # Feature engineering & scaling
+├── neural_network_basic.py          # Non-linear activations
+├── nn_train_test_split.py            # Validation strategies
+├── nn_l2_dropout.py                   # Regularization experiments
+├── nn_minibatch_dataloader.py         # Efficient data pipelines
+├── nn_minibatch_early_stopping.py     # Early stopping & best model checkpointing
+└── README.md            
+

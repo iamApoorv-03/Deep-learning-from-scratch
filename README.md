@@ -118,6 +118,6 @@ Learning rate decay works together with **early stopping** to produce stable con
 ├── nn_l2_dropout.py                   # Regularization experiments
 ├── nn_minibatch_dataloader.py         # Efficient data pipelines
 ├── nn_minibatch_early_stopping.py     # Early stopping & best model checkpointing
-├── nn_lr_scheduler.py                 #
+├── nn_lr_scheduler.py                 # Learning rate scheduling for adaptive training convergence
 └── README.md            
 

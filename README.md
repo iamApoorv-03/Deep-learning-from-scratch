@@ -102,15 +102,15 @@ Models can begin **memorizing noise instead of learning the underlying function*
 
 Polynomial features were added:
 
-```
+$$
 X_poly = [x , x²]
-```
+$$
 
 ### Feature Normalization
 
-```
+$$
 X_norm = (X - mean) / std
-```
+$$
 
 ### Key Insight
 
@@ -297,15 +297,15 @@ Proper initialization maintains **stable signal propagation through deep network
 
 BatchNorm normalizes layer activations:
 
-```
+$$
 x̂ = (x - μ) / sqrt(σ² + ε)
-```
+$$
 
 Then applies learnable parameters:
 
-```
+$$
 y = γx̂ + β
-```
+$$
 
 ### Benefits
 
@@ -327,17 +327,17 @@ The project transitions from **regression to classification**.
 
 Converts logits into probabilities:
 
-```
+$$
 σ(z_i) = e^{z_i} / Σ e^{z_j}
-```
+$$
 
 ### CrossEntropy Loss
 
 Measures prediction error:
 
-```
+$$
 L = - Σ y_i log(p_i)
-```
+$$
 
 PyTorch provides:
 

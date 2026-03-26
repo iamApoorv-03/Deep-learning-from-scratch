@@ -22,7 +22,7 @@ Understanding optimizers is critical because they influence:
 
 ---
 
-# 1. Gradient Descent 
+# 1. Gradient Descent Recap
 
 Training a neural network means minimizing a **loss function**.
 

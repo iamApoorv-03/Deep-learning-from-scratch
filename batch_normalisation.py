@@ -24,7 +24,7 @@ This causes the input distribution of later layers to shift.
 
 As a result:
 
-* training becomes unstable
+* training becomes 
 * learning slows down
 * gradients may explode or vanish
 

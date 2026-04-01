@@ -12,7 +12,7 @@ In this file we will do experiments related to  overfitting by training a model 
 """
 
 import torch
-import torch.nn as nn
+import torch.nn as 
 import torch.optim as optim
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split

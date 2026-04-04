@@ -157,7 +157,7 @@ def create_deep_model():
  for _ in range(10):      # after for we need a variable in python thats why _ as we dont carfe about this variable
    layers.append(nn.Linear(input_dim , 64))
    layers.append(nn.LeakyReLU())
-   input_dim = 
+   input_dim = 64
 
  layers.append(nn.Linear(64,2))
  return nn.Sequential(*layers) # *layers = unpack list into separate layers which for loop created so PyTorch can build the network correctly

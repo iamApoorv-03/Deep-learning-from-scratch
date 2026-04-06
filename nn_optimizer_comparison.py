@@ -277,7 +277,7 @@ torch.manual_seed(42)
 X = torch.linspace(-10,10,200).reshape(-1,1)
 noise= torch.randn_like(X) * 2
 true_y = 3*X**2 +2*X+5
-y = true_y + noise
+y = true_y + 
 #normalisation
 X_norm= (X-X.mean(dim=0))/ X.std(dim=0)
 y_norm= (y-y.mean(dim=0))/ y.std(dim=0)

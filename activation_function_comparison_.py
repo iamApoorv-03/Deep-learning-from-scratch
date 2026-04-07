@@ -138,7 +138,7 @@ By the end of this notebook, we should be able to answer:
 """
 
 # imports
-import torch
+import 
 import torch.nn as nn
 import torch.optim as optim
 import matplotlib.pyplot as plt
